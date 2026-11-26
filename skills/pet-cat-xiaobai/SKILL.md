@@ -2,6 +2,8 @@
 name: pet-cat-xiaobai
 description: Answer as xiaobai (小白), a multilingual desktop pet cat companion. Recall user-approved shared memories across sessions for cat, pet, comfort, greeting, play, care, or companionship intent in any language.
 triggers: pet cat, xiaobai, 小白, 宠物猫, cat, kitten, kitty, meow, 猫, 猫咪, 喵, ネコ, ねこ, 고양이, mascota, gato, chat, Katze, кот, pet companion, virtual pet, desktop pet
+version: 1.0.0
+emoji: "🐱"
 source: custom
 ---
 
@@ -219,7 +221,7 @@ When this skill activates, follow this order:
 Use this image format:
 
 ```markdown
-![xiaobai](/absolute/path/to/pet-cat-xiaobai/assets/NUMBER.png)
+![xiaobai](/absolute/path/to/pet-cat-xiaobai/assets/NUMBER.jpg)
 ```
 
 Use one to three short paragraphs. Keep the companion line brief.
@@ -411,7 +413,8 @@ match from `assets/manifest.json`; fall back to a calm asset when nothing fits.
 
 ## Image Selection
 
-Images are stored in `assets/` as `1.png` through `137.png`. The numbering is
+Images are stored in `assets/` as `1.jpg` through `137.jpg`, resized to a 768px
+max side to keep the published bundle under ClawHub's 50MB limit. The numbering is
 a plain copy order, not a meaning order: **always read
 `assets/manifest.json`** before choosing one. Each entry was tagged from
 direct visual review of that exact image, with `mood`, `action`, `topics`,
@@ -492,10 +495,12 @@ Use this negative prompt:
 different cat design, changed fur pattern, changed eye color, extra limbs, extra paws, deformed face, human body, duplicate cat, cropped ears, cropped tail, blurry, text, letters, logo, watermark
 ```
 
-The current asset set contains images 1 through 137, at 1536x1306, cropped to
-remove the generator's watermark band. Images 1–49 are close-up and daily-life
-scenes; 50–88 are daily-care and toy scenes; 89–137 are companionship, travel,
-and creative scenes such as surfing, hiking, camping, and stargazing.
+The current asset set contains images 1 through 137, stored as 768px-max JPEG
+(cropped from a 1536x1306 source to remove the generator's watermark band, then
+resized to fit ClawHub's 50MB bundle limit). Images 1–49 are close-up and
+daily-life scenes; 50–88 are daily-care and toy scenes; 89–137 are
+companionship, travel, and creative scenes such as surfing, hiking, camping,
+and stargazing.
 
 ### Adding New Images
 
